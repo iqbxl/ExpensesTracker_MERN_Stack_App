@@ -14,7 +14,7 @@ async function create_Categories(req, res){
 }
 
 //  get: http://localhost:8080/api/categories
-async function  get_Categories(req, res){
+async function get_Categories(req, res){
     let data = await model.Categories.find({})
 
     let filter = await data.map(v => Object.assign({}, { type: v.type, color: v.color}));
@@ -37,7 +37,7 @@ async function create_Transaction(req, res){
 
     create.save(function(err){
         if(!err) return res.json(create);
-        return res.status(400).json({ message : `Erro while creating transaction ${err}`});
+        return res.status(400).json({ message : `Error while creating transaction ${err}`});
     });
 
 }
