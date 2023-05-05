@@ -13,7 +13,7 @@ app.use(express.json());
 const con = require('./db/connection.js');
 
 // using routes
-app.use(require('./routes/route'));
+app.use(require('./routes/route.js'));
 
 con.then(db => {
     if(!db) return process.exit(1);
@@ -28,7 +28,3 @@ con.then(db => {
 }).catch(error => {
     console.log(`Connection Failed...! ${error}`);
 });
-
-
-
-
